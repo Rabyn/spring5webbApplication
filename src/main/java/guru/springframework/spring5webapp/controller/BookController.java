@@ -13,9 +13,11 @@ import java.util.List;
 @Controller
 public class BookController {
 
-    @Autowired
     private BookRepository bookRepository;
 
+    public BookController(BookRepository bookRepository){
+        this.bookRepository = bookRepository;
+    }
 
     @RequestMapping("/books")
     public String getBooks(Model model){
